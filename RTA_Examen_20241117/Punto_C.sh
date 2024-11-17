@@ -22,8 +22,11 @@ COPY index.html /usr/share/nginx/html/index.html
 EXPOSE 80
 EOF
 
-USUARIO_DOCKER="lucamegadeth"
-PASSWD_DOCKER="dckr_pat_b7njajw-N4XHetSL1XjOpQ_sMpo"
+# MODIFICO PARA QUE NO SE VEAN LAS CONTRAÑEAS...
+# IGUALMENTE YA SUBI LA IMAGEN A DOCKERHUB ASIQUE SE PUEDE DESCARGAR...
+
+USUARIO_DOCKER="XXX"
+PASSWD_DOCKER="XXX"
 
 # Agrandar el volumen logico lv_docker...
 echo "agrando el volumen logico porque no alcanza la memoria"

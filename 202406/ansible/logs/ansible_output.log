@@ -14,3 +14,44 @@
 }
 2024-06-24 18:08:07,885 p=3444395 u=upszot n=ansible | PLAY RECAP **********************************************************************************************************************************************************************************************************************************
 2024-06-24 18:08:07,885 p=3444395 u=upszot n=ansible | localhost                  : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-17 22:44:28,046 p=2208 u=luca n=ansible | - Role roles/archivo was created successfully
+2024-11-17 22:44:28,562 p=2211 u=luca n=ansible | - Role roles/estructura was created successfully
+2024-11-17 22:44:29,092 p=2212 u=luca n=ansible | - Role roles/sudoers was created successfully
+2024-11-17 22:44:29,633 p=2221 u=luca n=ansible | [WARNING]: A duplicate localhost-like entry was found (localhost). First found localhost was 127.0.0.1
+
+2024-11-17 22:44:29,931 p=2221 u=luca n=ansible | PLAY [all] ****************************************************************************************************
+2024-11-17 22:44:29,954 p=2221 u=luca n=ansible | TASK [Gathering Facts] ****************************************************************************************
+2024-11-17 22:44:31,259 p=2221 u=luca n=ansible | ok: [localhost]
+2024-11-17 22:44:31,673 p=2221 u=luca n=ansible | ok: [127.0.0.1]
+2024-11-17 22:44:31,690 p=2221 u=luca n=ansible | TASK [include_role : 2do_parcial] *****************************************************************************
+2024-11-17 22:44:31,775 p=2221 u=luca n=ansible | TASK [2do_parcial : debug] ************************************************************************************
+2024-11-17 22:44:31,795 p=2221 u=luca n=ansible | ok: [127.0.0.1] => {
+    "msg": "Tareas del 2do Parcial"
+}
+2024-11-17 22:44:31,802 p=2221 u=luca n=ansible | ok: [localhost] => {
+    "msg": "Tareas del 2do Parcial"
+}
+2024-11-17 22:44:31,812 p=2221 u=luca n=ansible | TASK [Otra tarea] *********************************************************************************************
+2024-11-17 22:44:31,831 p=2221 u=luca n=ansible | ok: [127.0.0.1] => {
+    "msg": "Despues de la ejecucion del rol"
+}
+2024-11-17 22:44:31,838 p=2221 u=luca n=ansible | ok: [localhost] => {
+    "msg": "Despues de la ejecucion del rol"
+}
+2024-11-17 22:44:31,848 p=2221 u=luca n=ansible | TASK [estructura : Crear directorios en /tmp/2do_parcial/] ****************************************************
+2024-11-17 22:44:32,196 p=2221 u=luca n=ansible | changed: [localhost] => (item=alumno)
+2024-11-17 22:44:32,278 p=2221 u=luca n=ansible | ok: [127.0.0.1] => (item=alumno)
+2024-11-17 22:44:32,389 p=2221 u=luca n=ansible | changed: [localhost] => (item=equipo)
+2024-11-17 22:44:32,556 p=2221 u=luca n=ansible | ok: [127.0.0.1] => (item=equipo)
+2024-11-17 22:44:32,567 p=2221 u=luca n=ansible | TASK [archivo : Generar datos del alumno en /tmp/2do_parcial/alumno/datos_alumno.txt] *************************
+2024-11-17 22:44:33,177 p=2221 u=luca n=ansible | changed: [localhost]
+2024-11-17 22:44:33,247 p=2221 u=luca n=ansible | ok: [127.0.0.1]
+2024-11-17 22:44:33,256 p=2221 u=luca n=ansible | TASK [archivo : Generar datos del equipo en /tmp/2do_parcial/equipo/datos_equipo.txt] *************************
+2024-11-17 22:44:33,674 p=2221 u=luca n=ansible | changed: [localhost]
+2024-11-17 22:44:33,832 p=2221 u=luca n=ansible | ok: [127.0.0.1]
+2024-11-17 22:44:33,841 p=2221 u=luca n=ansible | TASK [sudoers : Configurar sudoers para el grupo 2PSupervisores sin contraseña] *******************************
+2024-11-17 22:44:34,103 p=2221 u=luca n=ansible | fatal: [127.0.0.1]: FAILED! => {"msg": "Missing sudo password"}
+2024-11-17 22:44:34,228 p=2221 u=luca n=ansible | changed: [localhost]
+2024-11-17 22:44:34,245 p=2221 u=luca n=ansible | PLAY RECAP ****************************************************************************************************
+2024-11-17 22:44:34,245 p=2221 u=luca n=ansible | 127.0.0.1                  : ok=6    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-11-17 22:44:34,245 p=2221 u=luca n=ansible | localhost                  : ok=7    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

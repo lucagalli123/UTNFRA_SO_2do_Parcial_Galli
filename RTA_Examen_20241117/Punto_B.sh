@@ -44,6 +44,6 @@ sudo chmod 755 /usr/local/bin/GalliAltaUser-groups.sh
 
 echo "ejecuto el script..."
 RUTA_CARPETA_SCRIPT=/usr/local/bin/GalliAltaUser-groups.sh
-RUTA_BUSQUEDA_LISTA_USUARIOS=$(find / -type d -name "202406" 2>/dev/null)
-RUTA_FINAL_LISTA_USUARIOS=${RUTA_BUSQUEDA_LISTA_USUARIOS}/bash_script/Lista_Usuarios.txt
-${RUTA_CARPETA_SCRIPT} $(whoami) $RUTA_FINAL_LISTA_USUARIOS
+RUTA_LISTA_USUARIOS=/home/$(whoami)/UTN-FRA_SO_Examenes/202406/bash_script/Lista_Usuarios.txt
+${RUTA_CARPETA_SCRIPT} $(whoami) $RUTA_LISTA_USUARIOS
+echo "usuarios creados con exito!"

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# EJECUTAR EL SCRIPT DE ESTA MANERA: ". Punto_D.sh"
+
 echo "claves ssh..."
 yes | ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -N ""
 cat /home/$(whoami)/.ssh/id_ed25519.pub >> /home/$(whoami)/.ssh/authorized_keys

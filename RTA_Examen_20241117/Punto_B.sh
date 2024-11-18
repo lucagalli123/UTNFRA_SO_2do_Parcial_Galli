@@ -1,4 +1,7 @@
 #!/bin/bash
+
+# EJECUTAR EL SCRIPT DE ESTA MANERA: ". Punto_B.sh"
+
 cat << 'EOF' | sudo tee /usr/local/bin/GalliAltaUser-groups.sh > /dev/null
 #!/bin/bash
 

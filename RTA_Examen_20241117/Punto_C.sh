@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# EJECUTAR EL SCRIPT DE ESTA MANERA: ". Punto_C.sh"
+
 RUTA_CARPETA_TRABAJO=$(find / -type d -name "UTN-FRA_SO_Examenes" 2>/dev/null)
 cd ${RUTA_CARPETA_TRABAJO}/202406/docker
 cat > index.html << EOF

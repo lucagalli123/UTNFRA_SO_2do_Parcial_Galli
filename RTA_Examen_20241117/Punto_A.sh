@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# EJECUTAR EL SCRIPT DE ESTA MANERA: ". Punto_A.sh"
+
 DISCO_1=$(lsblk | grep 1G | awk '{print $1}')
 DISCO_2=$(lsblk | grep 2G | awk '{print $1}' | head -n1)
 DISCO_1G=$DISCO_1

@@ -5,13 +5,14 @@ yes | ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -N ""
 cat /home/$(whoami)/.ssh/id_ed25519.pub >> /home/$(whoami)/.ssh/authorized_keys
 
 # carpeta de trabajo de ansible
-cd /home/$(whoami)/UTN-FRA_SO_Examenes/202406/ansible
+RUTA_CARPETA_TRABAJO=$(find / -type d -name "UTN-FRA_SO_Examenes" 2>/dev/null)
+cd ${RUTA_CARPETA_TRABAJO}/202406/ansible
 
-# creacion de roles
-ansible-galaxy role init roles/archivo
+# crear roles
 ansible-galaxy role init roles/estructura
+ansible-galaxy role init roles/archivo
 ansible-galaxy role init roles/sudoers
-echo "roles creados"
+echo "Roles creados con exito"
 
 # role estructura
 cat << 'EOF' > roles/estructura/tasks/main.yml
@@ -29,7 +30,7 @@ cat << 'EOF' > roles/estructura/tasks/main.yml
 EOF
 
 # role archivo
-
+echo "Configurando el rol 'archivo'..."
 mkdir -p roles/archivo/templates
 cat << 'EOF' > roles/archivo/tasks/main.yml
 ---
@@ -113,13 +114,12 @@ EOF
 # Ejecutar playbook
 echo "Ejecutando playbook..."
 ansible-playbook -i inventory playbook.yml
-
+echo " "
 echo "resultado:"
 ls -l /tmp/2do_parcial/
-
+echo " "
 echo "archivo datos alumno:"
 cat /tmp/2do_parcial/alumno/datos_alumno.txt
-
+echo " "
 echo "archivo datos de equipo:"
 cat /tmp/2do_parcial/equipo/datos_equipo.txt
-

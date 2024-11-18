@@ -1,5 +1,4 @@
 #!/bin/bash
-echo "copio el script en /usr/local..."
 cat << 'EOF' | sudo tee /usr/local/bin/GalliAltaUser-groups.sh > /dev/null
 #!/bin/bash
 
@@ -36,14 +35,11 @@ sudo useradd -m -s /bin/bash -c "$USUARIO_3" -p "$PASSWD_USUARIO" -g $GRUPO_PRI_
 sudo useradd -m -s /bin/bash -c "$USUARIO_4" -p "$PASSWD_USUARIO" -g $GRUPO_PRI_USER_4 -d $RUTA_HOME_USER_4 $USUARIO_4
 EOF
 
-echo "script copiado..."
-
-echo "doy permisos al script copiado..."
-
 sudo chmod 755 /usr/local/bin/GalliAltaUser-groups.sh
 
-echo "ejecuto el script..."
 RUTA_CARPETA_SCRIPT=/usr/local/bin/GalliAltaUser-groups.sh
-RUTA_LISTA_USUARIOS=/home/$(whoami)/UTN-FRA_SO_Examenes/202406/bash_script/Lista_Usuarios.txt
-${RUTA_CARPETA_SCRIPT} $(whoami) $RUTA_LISTA_USUARIOS
-echo "usuarios creados con exito!"
+RUTA_BUSQUEDA_LISTA_USUARIOS=$(find / -type d -name "UTN-FRA_SO_Examenes" 2>/dev/null)
+RUTA_FINAL_LISTA_USUARIOS=${RUTA_BUSQUEDA_LISTA_USUARIOS}/202406/bash_script/Lista_Usuarios.txt
+${RUTA_CARPETA_SCRIPT} $(whoami) $RUTA_FINAL_LISTA_USUARIOS
+
+echo "Usuarios creados con exito"

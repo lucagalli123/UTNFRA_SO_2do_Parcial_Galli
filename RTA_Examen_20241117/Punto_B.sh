@@ -40,6 +40,9 @@ sudo chmod 755 /usr/local/bin/GalliAltaUser-groups.sh
 RUTA_CARPETA_SCRIPT=/usr/local/bin/GalliAltaUser-groups.sh
 RUTA_BUSQUEDA_LISTA_USUARIOS=$(find / -type d -name "UTN-FRA_SO_Examenes" 2>/dev/null)
 RUTA_FINAL_LISTA_USUARIOS=${RUTA_BUSQUEDA_LISTA_USUARIOS}/202406/bash_script/Lista_Usuarios.txt
+echo "ejecucion del script pata crear usuarios..."
+echo "${RUTA_CARPETA_SCRIPT} $(whoami) $RUTA_FINAL_LISTA_USUARIOS"
 ${RUTA_CARPETA_SCRIPT} $(whoami) $RUTA_FINAL_LISTA_USUARIOS
-
+echo "comprobacion de directorios de usuarios en carpeta /work:"
+ls -l /work
 echo "Usuarios creados con exito"
